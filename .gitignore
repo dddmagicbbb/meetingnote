@@ -10,3 +10,10 @@ TODO.md.*
 .claude/todo-guard/
 .claude/todo-guard.json
 .claude/*.bak*
+
+# 05-conventions.md 의 .gitignore 항목
+__pycache__/
+.pytest_cache/
+.venv/
+*.db
+*.log
