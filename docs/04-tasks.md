@@ -50,16 +50,16 @@ MVP 를 3개 Phase 로 진행한다. **Phase 이름과 개수는 아래 3개 그
 
 | 단계 | 검증 방법 | 완료 |
 |---|---|---|
-| 2.1 `backend/` 골격 + 의존성 8개 설치 | `requirements.txt` 에 8개만 있고 `pip install` 이 성공하는지 확인 | [ ] |
-| 2.2 설정 읽기 - `.env` 의 `GEMINI_API_KEY` · `GEMINI_MODEL` | 코드에 키 문자열이 없는지 grep, 설정 로딩 테스트 통과 | [ ] |
-| 2.3 DB + Meeting 모델 (8필드, `sqlite_autoincrement`) | 생성된 테이블 DDL 에 `AUTOINCREMENT` 가 있는지, 지운 id 가 다시 쓰이지 않는지 pytest | [ ] |
-| 2.4 요청 스키마(`extra="forbid"`) + 검증 실패 400 예외 핸들러 | 필수 필드 누락 400, 스펙 외 필드 422 pytest | [ ] |
-| 2.5 회의록 CRUD 5개 - `POST` · `GET` 목록 · `GET` 단건 · `PUT` · `DELETE` `/api/notes` | 201 / 200 / 200 / 200 / 204, 없는 id 404, 목록에 `body` 없음 · 단건에 있음 pytest | [ ] |
-| 2.6 목록 검색 - `q` · `from` · `to` | 제목 · 참석자 부분 일치, 본문 미검색, 양끝 포함(`to` 23:59:59) pytest | [ ] |
-| 2.7 세 갈래 구분 - Gemini 호출 (02-specs 기준 프롬프트) | 실제 Gemini 를 불러 pytest(05-conventions): 회의 본문이 세 갈래로 나뉘어 저장, 20자 미만이면 세 칸 빈 값, 회의 내용이 아니면 세 칸 빈 값 | [ ] |
-| 2.8 `GET /api/todos` | 필드 `what` / `who` / `when` / `note_id` / `note_title`, 회의 날짜 오래된 순 pytest | [ ] |
-| 2.9 `POST /api/upload` - 받아쓰기 | mp3 · wav 외 415, 25MB 초과 413, 실제 Gemini 로 녹취 파일을 받아써 200 + 본문 pytest | [ ] |
-| 2.10 포트 8000 실행 + 전체 테스트 | 전체 pytest 통과, `http://localhost:8000/api/notes` 응답 확인 | [ ] |
+| 2.1 `backend/` 골격 + 의존성 8개 설치 | `requirements.txt` 에 8개만 있고 `pip install` 이 성공하는지 확인 | [x] |
+| 2.2 설정 읽기 - `.env` 의 `GEMINI_API_KEY` · `GEMINI_MODEL` | 코드에 키 문자열이 없는지 grep, 설정 로딩 테스트 통과 | [x] |
+| 2.3 DB + Meeting 모델 (8필드, `sqlite_autoincrement`) | 생성된 테이블 DDL 에 `AUTOINCREMENT` 가 있는지, 지운 id 가 다시 쓰이지 않는지 pytest | [x] |
+| 2.4 요청 스키마(`extra="forbid"`) + 검증 실패 400 예외 핸들러 | 필수 필드 누락 400, 스펙 외 필드 422 pytest | [x] |
+| 2.5 회의록 CRUD 5개 - `POST` · `GET` 목록 · `GET` 단건 · `PUT` · `DELETE` `/api/notes` | 201 / 200 / 200 / 200 / 204, 없는 id 404, 목록에 `body` 없음 · 단건에 있음 pytest | [x] |
+| 2.6 목록 검색 - `q` · `from` · `to` | 제목 · 참석자 부분 일치, 본문 미검색, 양끝 포함(`to` 23:59:59) pytest | [x] |
+| 2.7 세 갈래 구분 - Gemini 호출 (02-specs 기준 프롬프트) | 실제 Gemini 를 불러 pytest(05-conventions): 회의 본문이 세 갈래로 나뉘어 저장, 20자 미만이면 세 칸 빈 값, 회의 내용이 아니면 세 칸 빈 값 | [x] |
+| 2.8 `GET /api/todos` | 필드 `what` / `who` / `when` / `note_id` / `note_title`, 회의 날짜 오래된 순 pytest | [x] |
+| 2.9 `POST /api/upload` - 받아쓰기 | mp3 · wav 외 415, 25MB 초과 413, 실제 Gemini 로 녹취 파일을 받아써 200 + 본문 pytest | [x] |
+| 2.10 포트 8000 실행 + 전체 테스트 | 전체 pytest 통과, `http://localhost:8000/api/notes` 응답 확인 | [x] |
 
 ## Phase 3 - 프론트
 
