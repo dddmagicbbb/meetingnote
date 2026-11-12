@@ -2,3 +2,11 @@
 .env
 .env.*
 !.env.example
+
+# 투두가드 작업 기록 — 지시 원문이 그대로 적혀 비밀값이 섞일 수 있다
+TODO.md
+TODO-완료.md
+TODO.md.*
+.claude/todo-guard/
+.claude/todo-guard.json
+.claude/*.bak*
